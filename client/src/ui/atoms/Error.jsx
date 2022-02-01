@@ -1,4 +1,6 @@
 import { Box, Typography } from '@mui/material';
+import ErrorImage from '../../assets/unknown_error.png';
+import { ImageWithInfo } from './ImageWithInfo';
 
 export const Error = ({ error }) => {
   return (
@@ -10,11 +12,14 @@ export const Error = ({ error }) => {
         flexDirection: 'column',
       }}
     >
-      {
-        error?.message?.includes('Network Error') ? (
-          <Typography>Uruchom Server!</Typography>
-        ) : null //  TODO in TASK 1
-      }
+      {error?.message?.includes('Network Error') ? (
+        <Typography>Uruchom Server!</Typography>
+      ) : (
+        <ImageWithInfo
+          imageText="Wystąpił błąd techniczny"
+          imageSource={ErrorImage}
+        />
+      )}
     </Box>
   );
 };
