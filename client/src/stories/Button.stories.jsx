@@ -1,5 +1,5 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from 'react';
-
 import { Button } from '../ui';
 import { Grid, Typography } from '@mui/material';
 
@@ -33,6 +33,21 @@ export default {
         default: false,
         type: 'boolean',
       },
+    },
+    startIcon: {
+      control: {
+        default: false,
+        type: 'boolean',
+      },
+    },
+    endIcon: {
+      control: {
+        default: false,
+        type: 'boolean',
+      },
+    },
+    handleClick: {
+      action: 'handleClick',
     },
   },
 };
@@ -82,6 +97,51 @@ export const Playground = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Playground.args = {
   label: 'Button',
+  onClick: {
+    handleClick: {
+      action: 'clicked',
+    },
+  },
+};
+
+export const Primary = Template.bind({});
+Primary.args = {
+  label: 'Button',
+  variant: 'contained',
+  color: 'primary',
+  onClick: {
+    action: 'clicked',
+  },
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  label: 'Button',
+  variant: 'contained',
+  color: 'error',
+  onClick: {
+    action: 'clicked',
+  },
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  label: 'Button',
+  variant: 'contained',
+  color: 'success',
+  onClick: {
+    action: 'clicked',
+  },
+};
+
+export const Warning = Template.bind({});
+Warning.args = {
+  label: 'Button',
+  variant: 'contained',
+  color: 'warning',
+  onClick: {
+    action: 'clicked',
+  },
 };
 
 export const AllStories = All.bind({});
